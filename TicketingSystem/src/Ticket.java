@@ -1,5 +1,5 @@
 public class Ticket {
-    private int ticketNumber;
+    private String ticketNumber;
     private String subject;
     private String description;
     private String status;
@@ -7,7 +7,9 @@ public class Ticket {
     private User client;
     private User staff;
 
-    public Ticket(int ticketNumber, String subject, String description, String status, User client) {
+    private String resolution;
+
+    public Ticket(String ticketNumber, String subject, String description, String status, User client) {
         this.ticketNumber = ticketNumber;
         this.subject = subject;
         this.description = description;
@@ -17,11 +19,11 @@ public class Ticket {
 
     // Getters and setters for all fields
 
-    public int getTicketNumber() {
+    public String getTicketNumber() {
         return ticketNumber;
     }
 
-    public void setTicketNumber(int ticketNumber) {
+    public void setTicketNumber(String ticketNumber) {
         this.ticketNumber = ticketNumber;
     }
 
@@ -71,5 +73,13 @@ public class Ticket {
 
     public void setStaff(User staff) {
         this.staff = staff;
+    }
+
+    public String getResolution() {
+        return resolution;
+    }
+
+    public void setResolution(String resolution) {
+        this.resolution = resolution;
     }
 }

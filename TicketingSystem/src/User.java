@@ -1,11 +1,13 @@
 public class User {
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
     private String password;
     private String role;
 
-    public User(String name, String email, String password, String role) {
-        this.name = name;
+    public User(String firstName, String lastName, String email, String password, String role) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.role = role;
@@ -14,11 +16,15 @@ public class User {
     // Getters and setters for all fields
 
     public String getName() {
-        return name;
+        return firstName + lastName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String name) {
+        this.firstName = name;
+    }
+
+    public void setLastName(String name) {
+        this.lastName = name;
     }
 
     public String getEmail() {
