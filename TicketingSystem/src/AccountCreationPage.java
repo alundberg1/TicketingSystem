@@ -7,10 +7,10 @@ public class AccountCreationPage {
         scanner = new Scanner(System.in);
     }
 
-    public void display(User admin) {
+    public User display(User admin) {
         if (!admin.getRole().equals("admin")) {
             System.out.println("Access denied. Only users with the role 'admin' can access this page.");
-            return;
+            return null;
         }
 
         System.out.println("Account Creation Page");
@@ -36,6 +36,7 @@ public class AccountCreationPage {
         // Save the new user to the database or user repository
 
         System.out.println("Account created successfully!");
+        return user;
     }
 }
 

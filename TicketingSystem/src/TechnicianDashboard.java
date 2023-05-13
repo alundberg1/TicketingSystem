@@ -12,6 +12,14 @@ public class TechnicianDashboard {
         this.users = users;
     }
 
+    public void updateTickets(ArrayList<Ticket> tickets) {
+        this.tickets = tickets;
+    }
+
+    public void updateUsers(ArrayList<User> users) {
+        this.users = users;
+    }
+
     public void displayTickets(User user) {
         System.out.println("Helpdesk Ticketing System");
         System.out.println("-------------------------");
@@ -26,7 +34,11 @@ public class TechnicianDashboard {
                 System.out.println("Description: " + ticket.getDescription());
                 System.out.println("Status: " + ticket.getStatus());
                 System.out.println("Priority: " + ticket.getPriority());
-                System.out.println("Staff: " + ticket.getStaff().getName());
+                if(ticket.getStaff() == null) {
+                    System.out.println("Staff: Unassigned");
+                } else System.out.println("Staff: " + ticket.getStaff().getName());
+
+
                 System.out.println("--------------------");
             }
         }
@@ -46,10 +58,12 @@ public class TechnicianDashboard {
                 System.out.println("Description: " + ticket.getDescription());
                 System.out.println("Status: " + ticket.getStatus());
                 System.out.println("Priority: " + ticket.getPriority());
-                System.out.println("Staff: " + ticket.getStaff().getName());
+                if(ticket.getStaff() == null) {
+                    System.out.println("Staff: Unassigned");
+                } else System.out.println("Staff: " + ticket.getStaff().getName());
                 System.out.println("--------------------");
 
-                if (ticket.getStatus().equals("open")) {
+                if (ticket.getStatus().equals("OPENED")) {
                     System.out.print("Enter 'assign' to assign the ticket, 'resolve' to resolve and close the ticket, or 'cancel' to go back to main menu: ");
                     String action = scanner.nextLine();
 
